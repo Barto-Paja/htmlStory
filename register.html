@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="scripts.js"></script>
+  <link href="register-style-sheet.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- source
+https://devcorner.pl/walidacja-formularza-jquery/ -->
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12"><h1>Formularz kontaktowy</h1></div>
+    </div>
+    <div class="row">
+      <div class="col-12"><center>
+        <form id="formularz" method="post" action="">
+
+                <div>
+                    <label for="name">Nazwa:</label>
+                    <input type="text" id="name" name="name"></input>
+                    <span class="komunikat"></span>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"></input>
+                    <span class="komunikat"></span>
+                </div>
+
+                <div>
+                    <label for="message">Wiadomość:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <span class="komunikat"></span>
+                </div>
+
+                <div id="submit">
+                    <button type="submit">Wyślij</button>
+                </div>
+
+        </form>
+      </center>
+      </div>
+    </div>
+  </div>
+
+  <script>
+$(document).ready(function() {
+
+	//Walidacja nazwy
+	$('#name').on('blur', function() {
+		var input = $(this);
+		var name_length = input.val().length;
+		if(name_length >= 5 && name_length <= 15){
+			input.removeClass("invalid").addClass("valid");
+			input.next('.komunikat').text("Wprowadzono poprawną nazwę.").removeClass("blad").addClass("ok");
+		}
+		else{
+			input.removeClass("valid").addClass("invalid");
+			input.next('.komunikat').text("Przedstaw się czytelnie, najlepiej abyś zmieścił się między 5, a 16 znaków").removeClass("ok").addClass("blad");
+
+		}
+	});
+
+	//Walidacja email
+	$('#email').on('blur', function() {
+		var input = $(this);
+		var pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var is_email = pattern.test(input.val());
+		if(is_email){
+			input.removeClass("invalid").addClass("valid");
+			input.next('.komunikat').text("Wprowadzono poprawny email.").removeClass("blad").addClass("ok");
+		}
+		else{
+			input.removeClass("valid").addClass("invalid");
+			input.next('.komunikat').text("Wprowadź poprawny email!").removeClass("ok").addClass("blad");
+		}
+	});
+
+	//Walidacja wiadomości
+	$('#message').on('blur', function() {
+		var input = $(this);
+		var message = $(this).val();
+		if(message){
+			input.removeClass("invalid").addClass("valid");
+			input.next('.komunikat').text("Wprowadzono poprawną wiadomość.").removeClass("blad").addClass("ok");
+		}
+		else{
+			input.removeClass("valid").addClass("invalid");
+			input.next('.komunikat').text("Nie wysyłaj mi pustej wiadomości!").removeClass("ok").addClass("blad");
+		}
+	});
+
+	//Po próbie wysłania formularza
+		$('#submit button').click(function(event){
+			var name = $('#name');
+			var email = $('#email');
+			var message = $('#message');
+
+			if(name.hasClass('valid') && email.hasClass('valid') && message.hasClass('valid')){
+				alert("Pomyślnie wysłano formularz.");
+			}
+			else {
+				event.preventDefault();
+				alert("Uzupełnij wszystkie pola!");
+			}
+		});
+});
+</script>
+</body>
+</html>

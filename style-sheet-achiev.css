@@ -1,10 +1,11 @@
 .jumbotron{
-  background-image: url(images/river-head-background-1280.png);
+  background-image: url(images/larisa-birta-127432.jpg);
   /*background-size: contain;*/
   text-shadow: black 0.3em 0.3em 0.3em;
   background-color: #6699ff;
   background-repeat: no-repeat;
-  width: 100%;
+  background-size: 100%;
+
 }
 
 /*source: https://stackoverflow.com/questions/10099422/flushing-footer-to-bottom-of-the-page-twitter-bootstrap*/

@@ -1,0 +1,52 @@
+body {
+   background-image: url(images/desert-2897107_1920.jpg);
+   background-repeat: no-repeat;
+   height: 100%;
+   background-size: cover;
+}
+
+h1 {
+    color: white;
+    font-size: 48px;
+}
+
+#formularz label{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    color: white;
+}
+
+#submit{
+	padding-left: 100px;
+}
+
+#formularz div{
+	margin-top: 1em;
+}
+
+#formularz div input{
+	width: 170px;
+}
+
+textarea{
+	vertical-align: top;
+	height: 5em;
+	width: 170px;
+}
+
+input.invalid, textarea.invalid{
+    border: 3px solid red;
+}
+
+input.valid, textarea.valid{
+    border: 3px solid green;
+}
+
+.blad {
+	color: red;
+}
+
+.ok {
+	color: green;
+}

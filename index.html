@@ -6,8 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style-sheet.css">
+  <script src="scripts.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <!-- source: http://forum.php.pl/index.php?showtopic=130638  -->
+
+  <script>
+  $(document).ready(function() {
+  $("#klik").click(function () {
+  $('#pokaz').slideToggle('normal');
+  });
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+  $("#klika").click(function () {
+  $('#pokaza').slideToggle('normal');
+  });
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+  $("#klikb").click(function () {
+  $('#pokazb').slideToggle('normal');
+  });
+  });
+  </script>
+
 </head>
 <body>
   <div class="jumbotron text-center">
@@ -40,18 +68,50 @@
   <div class="row">
     <div class="col-sm-4">
       <img src="images/american-1280.png" class="img-rounded" width="150px" height="150px" >
-      <p>Płomienie Północy Łysiego Pióra</p>
+      <!-- <p>Płomienie Północy Łysiego Pióra</p> -->
+      <p id="klik">Płomienie Północy Łysiego Pióra</p>
+      <div id="pokaz" style="display: none">Starożytne Plemię Płomienia Północy Łysiego Pióra</br>
+        z dziada pradziada ceniła sobie spokój na swoich południowach granicznych stepach arktycznej Północy.</br>
+        Niestety w powietrzu na horyzoncie w kierunku południowym unoszą się dymy Orkowych machin wojennych, którzy pragną zagarnąć skarby naturalne tej ziemi.</br>
+      </br>
+      Czy jesteś gotów stanąć na czele jednej z osad i stawić czoła wrogowi?
+      </div>
     </div>
     <div class="col-sm-4">
       <img src="images/warrior-1280.png" class="img-rounded" width="100px" height="150px" >
-      <p>Herbu Tarczy Siekierą Szarpniętej</p>
+      <p id="klika">Herbu Tarczy Siekierą Szarpniętej</p>
+      <div id="pokaza" style="display: none">Siubhan, celtycki kapłan najwyżej rangi doznał wizji od samego Ghora-Onathara. Kolejny raz wojownicy z Czterech Wysp staną naprzeciw siebie,
+         aby zdecydować o tym, kto tym razem poprowadzi wielki klan Tarczy na grabież osad Orków.
+       </br>
+       A może Ty, jako jeden z Wielkiej Czwórki doprowadzisz do nawiązania nowych perpektyw dla klanu Tarczy?
+      </div>
     </div>
     <div class="col-sm-4">
       <img src="images/orc-1280.png" class="img-rounded" width="150px" height="150px" >
-      <p>Orków Bojowych Wzrokowo Rozproszonych</p>
+      <p id="klikb">Orków Bojowych Wzrokowo Rozproszonych</p>
+      <div id="pokazb" style="display: none">
+        Czujesz ten zew krwi? Taaak... właśnie Ciebie wzywa Molag-Bal do przelania krwi niewiernych.</br>
+        Po za tym patrząc z balkonu swego pałacu przykro Ci gdzieś, tam, w duszy(?), że Twoi poddani mieliby zrezygnować z tak luksusowego życia.</br>
+      </br>
+        Pozbądź się Dzikusów z klanu Tarczy.
+      </br>
+       Pss... Twoi badacze donoszą o nowych złożach ropy naftowej i diamentów na terenie Plemienia Północy w ramach umowy naukowej.</br>
+       Oni i tak nie zrobią z tego użytku, więc czemu nie miałoby to być dobro dla Twojej nacji?
+      </div>
     </div>
   </div>
+
+</br></br></br>
+  <a href="login.jsp" class="btn btn-success btn-lg" role="button">Zaloguj się!</a>
 </div>
+
+<div id="wrap">
+  <div id="main" class="container clear-top">
+    <p>To jest stopka, także © Bartosz Pajewski (i nie tylko) 2017</p>
+    <p>Specjalne podziękowania dla wszystkich za udostępnienie w sieci tyle wiedzy na temat tworzenia interaktywnych stron WWW,</b> gdyby nie Wy wziąłbym pożyczkę z Provitenda i powiesził się na ich lince </p>
+  </div>
+</div>
+<footer class="footer"></footer>
 
 </body>
 </html>
