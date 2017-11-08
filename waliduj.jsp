@@ -41,10 +41,15 @@ PreparedStatement ps=(PreparedStatement)con.prepareStatement(query);
 ResultSet rs=ps.executeQuery();
 if(rs.next())
 {
-     out.println("Zalogowano pomyślnie!");
-     String site = new String("http://www.bartoit.pl");
+    out.println("Zalogowano pomyślnie!");
+
+    String name = request.getParameter( "userenail" );
+    session.setAttribute( "theName", rs.next() );
+
+    String site = new String("shoshones.html");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", site);
+
 }
 else{
     out.println("Niepoprawny adres email lub hasło :(");
