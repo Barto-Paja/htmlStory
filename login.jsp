@@ -28,7 +28,7 @@
             String message = "";
             Connection connection = null;
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            connection = DriverManager.getConnection(connectionURL, "htmlStory", "");
+            connection = DriverManager.getConnection(connectionURL, "root", "");
             if(!connection.isClosed())
             message = "Successfully connected to " + "MySQL server using TCP/IP...";
             //      out.println("Successfully connected to " + "MySQL server using TCP/IP...");

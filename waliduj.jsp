@@ -33,7 +33,7 @@ String query = ("SELECT user_id FROM t_users WHERE useremail = '"+useremail+"' A
 
 Connection con;
 Class.forName(com.mysql.jdbc.Driver.class.getName());
-con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/wwwbaza", "htmlStory", "");
+con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/wwwbaza", "root", "");
 // PreparedStatement ps=(PreparedStatement)con.prepareStatement("SELECT user_id FROM t_users WHERE useremail =? AND" + "userpass =? ");
 // preparedStatement.setString(1, useremail);
 // preparedStatement.setString(2, userpass);
@@ -43,7 +43,7 @@ if(rs.next())
 {
     out.println("Zalogowano pomyślnie!");
 
-    String name = request.getParameter( "userenail" );
+    String name = request.getParameter( "useremail" );
     session.setAttribute( "theName", rs.next() );
 
     String site = new String("shoshones.html");
